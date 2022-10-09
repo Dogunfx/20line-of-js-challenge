@@ -1,11 +1,9 @@
-// this code reverse a string
 function reserve(str) {
   var wrd = String(str);
-  var newWord = "";
-  for (let index = wrd.length; index >= 0; index--) {
-    newWord += wrd.charAt(index);
+  if (wrd.length == 0) {
+    return "";
   }
-  return newWord;
+  return wrd.charAt(wrd.length - 1) + reserve(wrd.substring(0, wrd.length - 1));
 }
 
-console.log(reserve("This is the new team"));
+console.log(reserve("Hello"));
